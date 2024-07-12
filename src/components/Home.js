@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
     const [platform, setPlatform] = useState([])
@@ -17,8 +18,17 @@ function Home() {
         )
     })
     return (
-            <div>
-                <ul className="images">{streams}</ul>
+            <div className="logo">
+                <hr/>
+                <Link to={"/movies/new"}>
+                <button>click the button to add a new movie!</button>
+                </Link>
+                
+
+                
+                <logo>
+                    <ul className="images">{streams}</ul>
+                </logo>
             </div>
     )
 }

@@ -8,7 +8,13 @@ nav {
   float: left;
   text-align: center;
 }
-
+.movie-details{
+  text-align: center;
+}
+.movie-details img {
+  border: 5rem solid;
+  width: 25%;
+}
 nav a {
   display: inline-block;
   margin: 1rem 2rem;
@@ -88,7 +94,23 @@ input {
   transition: all 0.2s;
   width: 100%;
 }
-
+div .logo {
+  text-align: center;
+}
+div .logo button{
+  text-align: center;
+  background-color: var(--green);
+  color: white;
+  border: 2rem solid gray;
+  padding: 0.5rem 1rem;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+.movie-logo img {
+  width: 100%;
+}
 input:focus {
   outline: none;
   border-bottom: 2px solid var(--green);

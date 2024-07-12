@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
-function NewMovieForm({ onAddMovie, props}) {
+function AddMovie() {
+    const [movies, setMovies] = useState([]);
     const [image, setImage] = useState("")
     const [title, setTitle] = useState("")
     const [platform, setPlatform] = useState("")
     const [genre, setGenre] = useState("")
     const [year, setYear] = useState("")
+
+    const navigate = useNavigate()
+    function handleMovie(addMovie) {
+        setMovies([...movies, addMovie]);
+    }
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -27,8 +34,9 @@ function NewMovieForm({ onAddMovie, props}) {
             body: JSON.stringify(movieInfo),
         })
         .then(res => res.json())
-        .then(data => onAddMovie(data));
-        props.history.push("/home")
+        .then(data => handleMovie(data));
+        navigate("/movies")
+        console.log(movieInfo)
     }
 
     function handleTitleChange(e) {
@@ -56,10 +64,14 @@ function NewMovieForm({ onAddMovie, props}) {
                 <input type="text" name="genre" placeholder="genre" value={genre} onChange={handleGenreChange}/>
                 <input type="text" name="year" placeholder="year" value={year} onChange={handleYearChange}/>
                 <button type="submit">Add Movie</button>
+                
             </form>
+            <main className="movie-logo">
+                <img src="https://th.bing.com/th/id/OIP.FYTnh5Bov-TYfEGZLKSXiQHaFG?w=209&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" alt="logo"/>
+            </main>
 
         </div>
     )
 }
 
-export default NewMovieForm;
+export default AddMovie;

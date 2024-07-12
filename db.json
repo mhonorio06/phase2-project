@@ -57,20 +57,12 @@
       "year": 2001
     },
     {
-      "id": "2e8b",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3xtWbvA8UiljWeDcmQr3g-vzZ_81X5F7fA&s",
+      "id": "ba92",
+      "image": "",
       "title": "Friday The 13th",
-      "platform": "Netflix",
-      "genre": "Horror",
-      "year": "2009"
-    },
-    {
-      "id": "bcb8",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3xtWbvA8UiljWeDcmQr3g-vzZ_81X5F7fA&s",
-      "title": "Friday The 13th",
-      "platform": "Netflix",
-      "genre": "Horror",
-      "year": "2009"
+      "platform": "",
+      "genre": "",
+      "year": ""
     }
   ],
   "platforms": [

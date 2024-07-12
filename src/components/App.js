@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import NavBar from './NavBar';
-import { Switch, Route} from "react-router-dom"
-import About from "./About";
+import { Routes, Route} from "react-router-dom"
+import AddMovie from './AddMovie';
 import Home from "./Home";
 import Movies from "./Movies";
+import MovieDetails from './MovieDetails';
 
 function App() {
   const [page, setPage] = useState("/");
@@ -12,17 +13,25 @@ function App() {
       <div>
         <NavBar onChangePage={setPage} />
         
-            <Switch>
-              <Route path="/about">
-                <About/>
+          <Routes>
+            
+              <Route path="/movies/new"
+                element={<AddMovie/>}>
               </Route>
-              <Route path="/movies">
-                <Movies/>
+              <Route exact path="/movies/:id"
+              element = {<MovieDetails/>}>  
               </Route>
-              <Route path="/">
-                <Home/>
+              <Route path="/movies"
+                element = {<Movies/>}>
               </Route>
-            </Switch>
+              <Route exact path="/"
+                element = {<Home/>}>
+              </Route>
+              <Route path="*">
+                <h2>404 not found</h2>
+              </Route>
+            
+          </Routes>
         
       </div>
   )

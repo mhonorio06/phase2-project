@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
-import MovieList from "./MovieList";
+import MovieCard from "./MovieCard";
 import Search from './Search';
-import NewMovieForm from "./NewMovieForm";
 
 function Movies() {
     const [movies, setMovies] = useState([]);
@@ -12,14 +11,21 @@ function Movies() {
         .then(movies => setMovies(movies))
     },[]);
     
-    function handleAddMovie(addMovie) {
-        setMovies([...movies, addMovie]);
-    }
+    const movieInfo = movies.filter( movie => {
+        return search.toLowerCase() === "" ? movie : movie.title.toLowerCase().includes(search)
+    }).map(movie => {
+        return (
+            <MovieCard key={movie.id} 
+                       id={movie.id}
+                       image={movie.image}
+                        />   
+        )
+    })
     return (
         <div>
-            <NewMovieForm onAddMovie={handleAddMovie} />
             <Search setSearch={setSearch} />
-            <MovieList movies={movies} setMovies={setMovies} search={search}/>
+            <ul className="movies">{movieInfo}</ul>
+            
 
         
         </div>
