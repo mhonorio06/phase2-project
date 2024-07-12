@@ -27,8 +27,8 @@ function App() {
               <Route exact path="/"
                 element = {<Home/>}>
               </Route>
-              <Route path="*">
-                <h2>404 not found</h2>
+              <Route path="*"
+                element ={<h2>404 not found</h2>}>
               </Route>
             
           </Routes>
