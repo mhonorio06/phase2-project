@@ -8,7 +8,6 @@ function Home() {
         .then(res => res.json())
         .then(service => setPlatform(service))
     }, []);
-    console.log(platform)
     const streams = platform.map( p => {
         return (
         <ul className="platforms" key={p.id}>
@@ -26,9 +25,9 @@ function Home() {
                 
 
                 
-                <logo>
+                <>
                     <ul className="images">{streams}</ul>
-                </logo>
+                </>
             </div>
     )
 }
