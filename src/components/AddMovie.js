@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 function AddMovie() {
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState([])
     const [image, setImage] = useState("")
     const [title, setTitle] = useState("")
     const [platform, setPlatform] = useState("")

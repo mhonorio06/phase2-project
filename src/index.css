@@ -15,6 +15,13 @@ nav {
   border: 5rem solid;
   width: 25%;
 }
+.image-background {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx75NarMWcB-Rqhnc72eOVCIMOMd-SMCNFlA&s")
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; */
+}
 nav a {
   display: inline-block;
   margin: 1rem 2rem;

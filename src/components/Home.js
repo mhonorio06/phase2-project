@@ -22,11 +22,12 @@ function Home() {
                 <Link to={"/movies/new"}>
                 <button>click the button to add a new movie!</button>
                 </Link>
-                
-
-                
+                               
                 <>
-                    <ul className="images">{streams}</ul>
+                    
+                    <ul className="image-background">
+                        {streams}
+                    </ul>
                 </>
             </div>
     )

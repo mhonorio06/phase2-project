@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 function MovieCard({image, id}) {
 
+
     const navigate = useNavigate();
 
 function handleClick() {
@@ -9,11 +10,13 @@ function handleClick() {
 }
 
     return (
-        
-            <li className="movie" onClick={handleClick}>
-                <img src={image} alt="Movie Poster" />
+        <>
+            <li className="movie" >
+                <img src={image} onClick={handleClick} alt="Movie Poster" />
             </li>
-        
+            
+            
+        </>
     )
 }
 

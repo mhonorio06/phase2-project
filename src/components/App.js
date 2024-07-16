@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import NavBar from './NavBar';
 import { Routes, Route} from "react-router-dom"
 import AddMovie from './AddMovie';
@@ -7,14 +7,13 @@ import Movies from "./Movies";
 import MovieDetails from './MovieDetails';
 
 function App() {
-  const [page, setPage] = useState("/");
+  
 
   return (
       <div>
-        <NavBar onChangePage={setPage} />
         
+        <NavBar/>
           <Routes>
-            
               <Route path="/movies/new"
                 element={<AddMovie/>}>
               </Route>
@@ -30,7 +29,6 @@ function App() {
               <Route path="*"
                 element ={<h2>404 not found</h2>}>
               </Route>
-            
           </Routes>
         
       </div>
