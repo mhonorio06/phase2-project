@@ -1,21 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import ReviewDetails from "./ReviewDetails";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Outlet, useOutletContext } from "react-router-dom";
 function ReviewForm() {
-    
-    const [movie, setMovie] = useState([])
-    const [title, setTitle] = useState("")
-    const [comment, setComment] = useState("")
-    const [review, setReview] = useState([])
-    
-    const navigate = useNavigate();
-    const { id } = useParams();
 
+    const { 
+        title,
+        comment,
+        movie,
+        setMovie,
+        setReview,
+        setTitle,
+        setComment        
+    } = useOutletContext();
+
+    const navigate = useNavigate();
+    const { id } = useParams(); 
+    
     useEffect(() => {
-        fetch(`http://localhost:3000/movies/${id}`)
-        .then(res => res.json())
-        .then(data => setMovie(data))
-    },[id])
+            fetch(`http://localhost:3000/movies/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setMovie(data);
+                console.log(data)
+            })
+        },[id])
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -27,6 +35,8 @@ function ReviewForm() {
             genre: movie.genre,
             year: movie.year,
         }
+
+       
         
         fetch("http://localhost:3000/reviews", {
             method: "POST",
@@ -40,7 +50,9 @@ function ReviewForm() {
         .then(data => {
             setReview(data);
             console.log(data)
-            navigate("/reviews");
+            setTitle("")
+            setComment("")
+            navigate('/')
         })
         
     }
@@ -55,7 +67,7 @@ function ReviewForm() {
    
     return (
         <div className="new-movie-form">
-            
+            <Outlet/>
             <ReviewDetails movie={movie} />
 
             <h2>New Movie Review</h2>

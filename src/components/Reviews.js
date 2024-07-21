@@ -1,27 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import MovieCard from "./MovieCard";
-import NavBar from "./NavBar";
 import ReviewLink from "./ReviewLink";
+import { Outlet, useOutletContext } from "react-router-dom";
 
 function Reviews() {
-    const [movies, setMovies] = useState([])
-    const [reviews, setReviews] = useState([])
-
-        useEffect(() => {
-        fetch("http://localhost:3000/movies")
-       .then(res => res.json())
-       .then(data => {
-           setMovies(data)
-            })
-       },[])
-       
-       useEffect(() => {
-        fetch("http://localhost:3000/reviews")
-       .then(res => res.json())
-       .then(data => {
-           setReviews(data)
-            })
-       },[])
+    const { movies, reviews } = useOutletContext();
+    
        
        const reviewList = reviews.map(review => {
             return (
@@ -39,10 +23,8 @@ function Reviews() {
     })
     return (
             <div> 
-                <header>
-                    {<NavBar/>}
-                </header>
                 <ul className="movies">
+                    <Outlet/>
                     {movieList}
                     <hr/>
                     <h2>Movie Reviews</h2>

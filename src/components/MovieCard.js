@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+
 function MovieCard({ movie, id }) {
+
+    
     const navigate = useNavigate()
 
     function handleClick(){

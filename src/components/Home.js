@@ -1,15 +1,9 @@
-import React, { useState, useEffect} from "react";
-import NavBar from "./NavBar";
+import React from "react";
+import { Outlet, useOutletContext } from "react-router-dom";
 function Home() {
-    const [platforms, setPlatforms] = useState([])
 
-    useEffect(() => {
-        fetch("http://localhost:3000/platforms")
-       .then(res => res.json())
-       .then(data => {
-           setPlatforms(data)
-       })
-       },[])
+    const { platforms } = useOutletContext();
+    
 
   
     const streams = platforms.map( p => {
@@ -22,11 +16,10 @@ function Home() {
     })
     return (      
                 <>
-                <header>
-                    <NavBar/>
-                </header>
-                <h2 style={{"text-align":"center"}}>Welcome to my Movie Review App</h2>
-                <ul className="image-background">        
+                
+                <h2 style={{"textAlign":"center"}}>Welcome to my Movie Review App</h2>
+                <ul className="image-background">    
+                    <Outlet/>    
                     {streams}
                 </ul>
                 </>
