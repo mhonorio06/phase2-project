@@ -1,22 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-function MovieCard({image, id}) {
+function MovieCard({ movie, id }) {
+    const navigate = useNavigate()
 
-
-    const navigate = useNavigate();
-
-function handleClick() {
-    navigate(`/movies/${id}`)    
-}
-
+    function handleClick(){
+        navigate(`/reviews/new/${id}`)
+    }
     return (
-        <>
-            <li className="movie" >
-                <img src={image} onClick={handleClick} alt="Movie Poster" />
-            </li>
+        <div className="movie">
+            <ul>
+            <img src={movie.image} onClick={handleClick} alt={movie.film}
+            />
+            </ul>
             
-            
-        </>
+        </div>
     )
 }
 

@@ -1,35 +1,35 @@
-import React, {useEffect, useState} from "react";
-import { Link } from "react-router-dom";
-
+import React, { useState, useEffect} from "react";
+import NavBar from "./NavBar";
 function Home() {
-    const [platform, setPlatform] = useState([])
+    const [platforms, setPlatforms] = useState([])
+
     useEffect(() => {
         fetch("http://localhost:3000/platforms")
-        .then(res => res.json())
-        .then(service => setPlatform(service))
-    }, []);
-    const streams = platform.map( p => {
-        return (
+       .then(res => res.json())
+       .then(data => {
+           setPlatforms(data)
+       })
+       },[])
+
+  
+    const streams = platforms.map( p => {
+    return (
         <ul className="platforms" key={p.id}>
             <h6>{p.name}</h6>
             <img src={p.image} alt={p.name} />
         </ul>
         )
     })
-    return (
-            <div className="logo">
-                <hr/>
-                <Link to={"/movies/new"}>
-                <button>click the button to add a new movie!</button>
-                </Link>
-                               
+    return (      
                 <>
-                    
-                    <ul className="image-background">
-                        {streams}
-                    </ul>
+                <header>
+                    <NavBar/>
+                </header>
+                <h2 style={{"text-align":"center"}}>Welcome to my Movie Review App</h2>
+                <ul className="image-background">        
+                    {streams}
+                </ul>
                 </>
-            </div>
     )
 }
 

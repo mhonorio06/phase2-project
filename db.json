@@ -3,66 +3,42 @@
     {
       "id": "1",
       "image": "https://m.media-amazon.com/images/I/81DeWbxJTBL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
-      "title": "Stranger Things",
+      "film": "Stranger Things",
       "platform": "Netflix",
       "genre": "Sci-Fi",
       "year": 2022
     },
     {
       "id": "2",
-      "image": "https://m.media-amazon.com/images/I/41kTene5FBL._SX300_SY300_QL70_FMwebp_.jpg",
-      "title": "The Matrix",
-      "platform": "Disney+",
+      "image": "https://assets.scriptslug.com/live/img/imager/posters/48815/prey-2022_e23681ff95.jpg",
+      "film": "Prey",
+      "platform": "Hulu",
       "genre": "Sci-Fi",
-      "year": 1999
+      "year": 2022
     },
     {
       "id": "3",
-      "image": "https://m.media-amazon.com/images/I/81y0Ot+xx6L._AC_UY436_FMwebp_QL65_.jpg",
-      "title": "The Shawshank Redemption",
-      "platform": "HBO-Max",
-      "genre": "Drama",
-      "year": 1994
-    },
-    {
-      "id": "4",
       "image": "https://cdnb.artstation.com/p/assets/images/images/046/680/003/large/yas-koss-d6ad21138001053-6215214974718.jpg?1645690783",
-      "title": "Peaky Blinders",
+      "film": "Peaky Blinders",
       "platform": "Netflix",
       "genre": "Drama",
       "year": 2013
     },
     {
-      "id": "5",
+      "id": "4",
       "image": "https://sm.ign.com/t/ign_latam/movie/t/the-dark-k/the-dark-knight_36qc.1200.jpg",
-      "title": "The Dark Knight",
+      "film": "The Dark Knight",
       "platform": "HBO-Max",
       "genre": "Action",
       "year": 2008
     },
     {
-      "id": "6",
+      "id": "5",
       "image": "https://th.bing.com/th/id/OIP.O5ar9IgC_70RgrtXxkn71AHaLH?w=178&h=267&c=7&r=0&o=5&dpr=2&pid=1.7",
-      "title": "Avengers: Endgame",
+      "film": "Avengers: Endgame",
       "platform": "Disney+",
       "genre": "Action",
       "year": 2019
-    },
-    {
-      "id": "7",
-      "image": "https://image.tmdb.org/t/p/original/uCyvk6sLbJfBe6z4Gys7yf2Sgc.jpg",
-      "title": "The Lord of the Rings",
-      "platform": "Paramount+",
-      "genre": "Fantasy",
-      "year": 2001
-    },
-    {
-      "id": "7b31",
-      "image": "",
-      "title": "",
-      "platform": "",
-      "genre": "",
-      "year": ""
     }
   ],
   "platforms": [
@@ -85,6 +61,17 @@
       "id": "4",
       "name": "NETFLIX",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx75NarMWcB-Rqhnc72eOVCIMOMd-SMCNFlA&s"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "b4ae",
+      "title": "best show ever!!",
+      "comment": "One of the best shows I have ever seen.",
+      "image": "https://cdnb.artstation.com/p/assets/images/images/046/680/003/large/yas-koss-d6ad21138001053-6215214974718.jpg?1645690783",
+      "film": "Peaky Blinders",
+      "genre": "Drama",
+      "year": 2013
     }
   ]
 }
