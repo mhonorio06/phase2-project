@@ -5,7 +5,6 @@ function ReviewDetails({movie}) {
     const navigate = useNavigate();
     const {image, film, genre, year } = movie;
     
-    
     function handleClick(){
         navigate("/reviews")
     }
@@ -17,7 +16,6 @@ function ReviewDetails({movie}) {
             <h5>{genre}</h5>
             <h5>{year}</h5>
             <hr></hr>
-            
         </div>
     )
 }

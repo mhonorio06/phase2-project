@@ -1,25 +1,26 @@
 import React from "react";
-import { Outlet, useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
+import Websites from "./Websites";
 function Home() {
 
-    const { platforms } = useOutletContext();
+    const { movies } = useOutletContext();
     
 
   
-    const streams = platforms.map( p => {
+    const streams = movies.map( movie => {
     return (
-        <ul className="platforms" key={p.id}>
-            <h6>{p.name}</h6>
-            <img src={p.image} alt={p.name} />
-        </ul>
-        )
-    })
+        <Websites key={movie.id}
+                  movie={movie}
+                  />
+                )
+            })            
+
+    
     return (      
                 <>
                 
                 <h2 style={{"textAlign":"center"}}>Welcome to my Movie Review App</h2>
                 <ul className="image-background">    
-                    <Outlet/>    
                     {streams}
                 </ul>
                 </>

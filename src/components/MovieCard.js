@@ -9,6 +9,7 @@ function MovieCard({ movie, id }) {
     function handleClick(){
         navigate(`/reviews/new/${id}`)
     }
+    
     return (
         <div className="movie">
             <ul>

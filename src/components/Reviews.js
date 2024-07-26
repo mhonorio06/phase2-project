@@ -1,15 +1,17 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import ReviewLink from "./ReviewLink";
-import { Outlet, useOutletContext } from "react-router-dom";
-
+import { useOutletContext } from "react-router-dom";
 function Reviews() {
+    
     const { movies, reviews } = useOutletContext();
     
-       
+    
+    
        const reviewList = reviews.map(review => {
             return (
-                <ReviewLink key={review.id} id={review.id} review={review}/>
+                <ReviewLink key={review.id} id={review.id} 
+                            review={review}/>
                 )
             })
        
@@ -18,13 +20,14 @@ function Reviews() {
         return (
         <MovieCard key={movie.id} 
                    id={movie.id}
-                   movie={movie} />
+                   movie={movie}
+                   />
         )
     })
+    
     return (
             <div> 
                 <ul className="movies">
-                    <Outlet/>
                     {movieList}
                     <hr/>
                     <h2>Movie Reviews</h2>

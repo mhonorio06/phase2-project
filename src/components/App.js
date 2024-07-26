@@ -5,37 +5,29 @@ function App() {
 
     const [movies, setMovies] = useState([])
     const [reviews, setReviews] = useState([])
-    const [platforms, setPlatforms] = useState([])
-    const [movie, setMovie] = useState([])
-    const [review, setReview] = useState([])
-    const [title, setTitle] = useState("")
-    const [comment, setComment] = useState("")
-    
 
     useEffect(() => {
-        fetch("http://localhost:3000/platforms")
-       .then(res => res.json())
-       .then(data => {
-           setPlatforms(data)
-       })
-       },[])
+      fetch("http://localhost:3000/reviews")
+      .then(response => response.json())
+      .then(data => {
+          setReviews(data)
+          console.log(data)
+      })
+  },[])
 
         useEffect(() => {
-        fetch("http://localhost:3000/movies")
+        fetch("http://localhost:3000/movies")  
        .then(res => res.json())
        .then(data => {
            setMovies(data)
-            })
-       },[])
-       
-       useEffect(() => {
-        fetch("http://localhost:3000/reviews")
-       .then(res => res.json())
-       .then(data => {
-           setReviews(data)
+           console.log(data)
             })
        },[])
 
+    function AddReview(newReview) {
+      setReviews([...reviews, newReview])
+    }
+   
   return (
     <div>
       <header>
@@ -43,17 +35,9 @@ function App() {
       </header>
       <Outlet context={{
         movies: movies, 
-        platforms: platforms, 
-        reviews:reviews,
-        movie: movie,
-        review: review,
-        title: title,
-        comment: comment,
-        setTitle: setTitle,
-        setComment: setComment,
-        setReview: setReview,
-        setMovie: setMovie
-        }}/>
+        reviews: reviews,
+        AddReview: AddReview,
+      }}/>
     </div>
   )
   

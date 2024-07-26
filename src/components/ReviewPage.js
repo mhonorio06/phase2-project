@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from'react-router-dom';
-
+import { useParams, useNavigate } from'react-router-dom';
 function ReviewPage() {
 
+        
+        const { id } = useParams();
+        const navigate = useNavigate();
         const [review, setReview] = useState({
             title: "",
             comment: "",
             image: "",
             film: "",
             genre: "",
-            year: "",
+            year: ""
         })
-        const navigate = useNavigate()
-        const { id } = useParams();
-
+        
         useEffect(() => {
         
             fetch(`http://localhost:3000/reviews/${id}`)
@@ -24,13 +24,15 @@ function ReviewPage() {
              })
         },[id]);
        
-
+        function handleClick(){
+            navigate("/")
+        }
   
             
     return (
         <div className="review-story">
-            <img src={review.image} className="movie-image" 
-            onClick={() => navigate("/reviews")} alt={review.film} />
+            <img src={review.image} alt={review.film} 
+            onClick={handleClick}/>
             <h5>{review.film}</h5>
             <h5>{review.genre}</h5>
             <h5>{review.year}</h5>

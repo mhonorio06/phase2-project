@@ -1,18 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ReviewDetails from "./ReviewDetails";
-import { useNavigate, useParams, Outlet, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 function ReviewForm() {
 
-    const { 
-        title,
-        comment,
-        movie,
-        setMovie,
-        setReview,
-        setTitle,
-        setComment        
-    } = useOutletContext();
-
+    const { AddReview } = useOutletContext();
+    const [reviewData, setReviewData] = useState({
+        title: "",
+        comment: "",
+    })
+    const [movie, setMovie] = useState([])
     const navigate = useNavigate();
     const { id } = useParams(); 
     
@@ -20,16 +16,17 @@ function ReviewForm() {
             fetch(`http://localhost:3000/movies/${id}`)
             .then(res => res.json())
             .then(data => {
-                setMovie(data);
                 console.log(data)
+                setMovie(data)
+                
             })
         },[id])
 
     function handleSubmit(e) {
         e.preventDefault()
         const newReview = {
-            title: title,
-            comment: comment,
+            title: reviewData.title,
+            comment: reviewData.comment,
             image: movie.image,
             film: movie.film,
             genre: movie.genre,
@@ -48,40 +45,37 @@ function ReviewForm() {
         })
         .then( res => res.json())
         .then(data => {
-            setReview(data);
             console.log(data)
-            setTitle("")
-            setComment("")
-            navigate('/')
+            AddReview(data);
+            navigate('/reviews')
         })
-        
     }
-    
-    
-   function handleTitle(e) {
-    setTitle(e.target.value);
-   }
-   function handleComment(e) {
-    setComment(e.target.value);
-   }
+
+    function handleChange(e) {
+        setReviewData({
+            ...reviewData, [e.target.name]: e.target.value
+        }) 
+    }
    
     return (
         <div className="new-movie-form">
-            <Outlet/>
+            
             <ReviewDetails movie={movie} />
 
             <h2>New Movie Review</h2>
             <form onSubmit={handleSubmit}>
                 <label>Title :</label>
-                <input type="text" name="title" value={title} id="form-title" 
+                <input type="text" id="form-title" name="title"
+                value={reviewData.title}
                 placeholder="title of review..."
-                onChange={handleTitle} 
+                onChange={handleChange}
                 />
                 <label>Comment :</label>
-                <textarea type="text" value={comment} 
-                id="form-comment" name="comment" 
+                <textarea type="text" id="form-comment" name="comment"
+                value={reviewData.comment}
                 placeholder="review comments..." 
-                onChange={handleComment}
+                onChange={handleChange}
+                
                 />
                 <br></br>
                 <button id="submit-button" type="submit">Add Review</button>

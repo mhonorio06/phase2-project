@@ -4,7 +4,10 @@
       "id": "1",
       "image": "https://m.media-amazon.com/images/I/81DeWbxJTBL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
       "film": "Stranger Things",
-      "platform": "Netflix",
+      "platform": {
+        "name": "Netflix",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx75NarMWcB-Rqhnc72eOVCIMOMd-SMCNFlA&s"
+      },
       "genre": "Sci-Fi",
       "year": 2022
     },
@@ -12,7 +15,10 @@
       "id": "2",
       "image": "https://assets.scriptslug.com/live/img/imager/posters/48815/prey-2022_e23681ff95.jpg",
       "film": "Prey",
-      "platform": "Hulu",
+      "platform": {
+        "name": "Paramount+",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHGkqKJ2MOzykl44ednfvz-YM6JiDmNYgtQ&s"
+      },
       "genre": "Sci-Fi",
       "year": 2022
     },
@@ -20,7 +26,10 @@
       "id": "3",
       "image": "https://cdnb.artstation.com/p/assets/images/images/046/680/003/large/yas-koss-d6ad21138001053-6215214974718.jpg?1645690783",
       "film": "Peaky Blinders",
-      "platform": "Netflix",
+      "platform": {
+        "name": "Hulu",
+        "image": "https://th.bing.com/th/id/OIP.Ut2YFTbySyOLpweKUV4CUAAAAA?rs=1&pid=ImgDetMain"
+      },
       "genre": "Drama",
       "year": 2013
     },
@@ -28,7 +37,10 @@
       "id": "4",
       "image": "https://sm.ign.com/t/ign_latam/movie/t/the-dark-k/the-dark-knight_36qc.1200.jpg",
       "film": "The Dark Knight",
-      "platform": "HBO-Max",
+      "platform": {
+        "name": "HBO-MAX ",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzEwpGOpD-QmbzARq7VyhIgsOHqRpiP3PAWQ&s"
+      },
       "genre": "Action",
       "year": 2008
     },
@@ -36,7 +48,10 @@
       "id": "5",
       "image": "https://th.bing.com/th/id/OIP.O5ar9IgC_70RgrtXxkn71AHaLH?w=178&h=267&c=7&r=0&o=5&dpr=2&pid=1.7",
       "film": "Avengers: Endgame",
-      "platform": "Disney+",
+      "platform": {
+        "name": "DISNEY+",
+        "image": "https://www.wdwinfo.com/wp-content/uploads/2023/08/disney-plus.jpg"
+      },
       "genre": "Action",
       "year": 2019
     }
@@ -65,76 +80,40 @@
   ],
   "reviews": [
     {
-      "id": "b4ae",
-      "title": "best show ever!!",
-      "comment": "One of the best shows I have ever seen.",
+      "id": "80f2",
+      "title": "Peaky Blinders",
+      "comment": "peaky blinders",
       "image": "https://cdnb.artstation.com/p/assets/images/images/046/680/003/large/yas-koss-d6ad21138001053-6215214974718.jpg?1645690783",
       "film": "Peaky Blinders",
       "genre": "Drama",
       "year": 2013
     },
     {
-      "id": "1d1b",
-      "title": "Best Movie Ever",
-      "comment": "this is the sequel that finally does the Predator universe some justice and after 30 years it is the sequel that we have been waiting for. It is such a great film as well as the way that it pays homage to the Comanche people.",
+      "id": "232f",
+      "title": "Prey",
+      "comment": "prey",
       "image": "https://assets.scriptslug.com/live/img/imager/posters/48815/prey-2022_e23681ff95.jpg",
       "film": "Prey",
       "genre": "Sci-Fi",
       "year": 2022
     },
     {
-      "id": "7abf",
-      "title": "greatest",
-      "comment": "greatest",
-      "image": "https://sm.ign.com/t/ign_latam/movie/t/the-dark-k/the-dark-knight_36qc.1200.jpg",
-      "film": "The Dark Knight",
-      "genre": "Action",
-      "year": 2008
-    },
-    {
-      "id": "2b9b",
-      "title": "hello there",
-      "comment": "",
-      "image": "https://cdnb.artstation.com/p/assets/images/images/046/680/003/large/yas-koss-d6ad21138001053-6215214974718.jpg?1645690783",
-      "film": "Peaky Blinders",
-      "genre": "Drama",
-      "year": 2013
-    },
-    {
-      "id": "e18a",
-      "title": "wonderful",
-      "comment": "wonderful",
+      "id": "a014",
+      "title": "Avengers: Endgame",
+      "comment": "avengers: endgame",
       "image": "https://th.bing.com/th/id/OIP.O5ar9IgC_70RgrtXxkn71AHaLH?w=178&h=267&c=7&r=0&o=5&dpr=2&pid=1.7",
       "film": "Avengers: Endgame",
       "genre": "Action",
       "year": 2019
     },
     {
-      "id": "6b17",
-      "title": "helo",
-      "comment": "hello",
-      "image": "https://cdnb.artstation.com/p/assets/images/images/046/680/003/large/yas-koss-d6ad21138001053-6215214974718.jpg?1645690783",
-      "film": "Peaky Blinders",
-      "genre": "Drama",
-      "year": 2013
-    },
-    {
-      "id": "59ef",
-      "title": "hey",
-      "comment": "hey",
-      "image": "https://sm.ign.com/t/ign_latam/movie/t/the-dark-k/the-dark-knight_36qc.1200.jpg",
-      "film": "The Dark Knight",
-      "genre": "Action",
-      "year": 2008
-    },
-    {
-      "id": "180a",
-      "title": "hello",
-      "comment": "hello",
-      "image": "https://th.bing.com/th/id/OIP.O5ar9IgC_70RgrtXxkn71AHaLH?w=178&h=267&c=7&r=0&o=5&dpr=2&pid=1.7",
-      "film": "Avengers: Endgame",
-      "genre": "Action",
-      "year": 2019
+      "id": "a7b4",
+      "title": "Stranger Things",
+      "comment": "stranger things",
+      "image": "https://m.media-amazon.com/images/I/81DeWbxJTBL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "film": "Stranger Things",
+      "genre": "Sci-Fi",
+      "year": 2022
     }
   ]
 }
