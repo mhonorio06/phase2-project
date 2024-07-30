@@ -21,12 +21,14 @@ function App() {
        .then(data => {
            setMovies(data)
            console.log(data)
+        
             })
        },[])
 
-    function AddReview(newReview) {
+    function addReview(newReview) {
       setReviews([...reviews, newReview])
     }
+    
    
   return (
     <div>
@@ -36,7 +38,7 @@ function App() {
       <Outlet context={{
         movies: movies, 
         reviews: reviews,
-        AddReview: AddReview,
+        addReview: addReview,
       }}/>
     </div>
   )

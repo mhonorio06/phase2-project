@@ -31,6 +31,9 @@ const routes = [
                     path:"/reviews/:id",
                     element: <ReviewPage />
                 },
+                {
+                    
+                }
         ]
     }    
 ];

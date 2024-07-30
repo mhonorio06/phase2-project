@@ -26,7 +26,7 @@ function Reviews() {
     })
     
     return (
-            <div> 
+            <> 
                 <ul className="movies">
                     {movieList}
                     <hr/>
@@ -37,7 +37,7 @@ function Reviews() {
                 </ul>
                 </ul>
                 
-            </div>
+            </>
                 
     )
 }

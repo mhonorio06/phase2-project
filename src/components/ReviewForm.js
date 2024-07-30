@@ -3,12 +3,17 @@ import ReviewDetails from "./ReviewDetails";
 import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 function ReviewForm() {
 
-    const { AddReview } = useOutletContext();
+    const { addReview } = useOutletContext();
     const [reviewData, setReviewData] = useState({
         title: "",
         comment: "",
     })
-    const [movie, setMovie] = useState([])
+    const [movie, setMovie] = useState({
+        image: "",
+        film: "",
+        genre: "",
+        year: ""
+    })
     const navigate = useNavigate();
     const { id } = useParams(); 
     
@@ -46,7 +51,7 @@ function ReviewForm() {
         .then( res => res.json())
         .then(data => {
             console.log(data)
-            AddReview(data);
+            addReview(data);
             navigate('/reviews')
         })
     }
